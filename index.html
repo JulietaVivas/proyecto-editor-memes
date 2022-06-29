@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Generador de meme</title>
+  </head>
+
+  <body>
+    <!-- 
+                  ***********************************
+                              HEADER
+                  *********************************** -->
+    <header class="header">
+      <h1 class="title">Generador de memes</h1>
+      <div class="botones-header">
+        <button class="boton" id="img-boton">
+          <i class="fa-solid fa-file-image" aria-hidden="true"> </i>
+          Imagen
+        </button>
+        <button class="boton" id="text-boton">
+          <i class="fas fa-font button-icon-text"> </i>
+          Texto
+        </button>
+        <button class="boton" id="modo-oscuro-boton">
+          <i class="fa-solid fa-lightbulb"> </i>
+          Modo oscuro
+        </button>
+      </div>
+    </header>
+
+    
+        <!-- ********************************
+                      MAIN CONTAINER 
+             ******************************** -->
+    <div class="meme-editor">           
+      <main class="contenedor-principal">
+        <div class="boton-text">TOP TEXT</div>
+        <div class="imagen-meme"></div>
+        <div class="boton-text">BOTTOM TEXT</div>
+      </main>
+    </div>
+
+    <!-- *************************************
+                      IMAGEN PANEL 
+                ************************************* -->
+    <aside class="panel" id="panel-control-imagen">
+      <button class="cerrar-panel" aria-label="Cerrar panel">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <section class="imagen-panel">
+        <h2 class="titulo-panel">IMAGEN</h2>
+        <div class="panel-control">
+          <p>URL</p>
+          <input type="text" id="insertar-img-url" aria-label="url de imagen" />
+        </div>
+
+        <!-- ****** FONDO ****** -->
+        <div class="panel-control">
+          <p>FONDO</p>
+          <div class="panel-fondos">
+            <div class="fondo-color">
+              <input
+                id="color"
+                type="color"
+                value="#FFFFFF"
+                aria-label="Color de fondo de la imagen"
+              />
+              <span class="color-name">#FFFFFF</span>
+            </div>
+            <div class="panel-blend-mode">
+              <select
+                id="blend-mode"
+                aria-label="Modo de mezcla de fondo de imagen"
+              >
+                <option value="unset">Ninguno</option>
+                <option value="lighten">Aclarar</option>
+                <option value="darken">Oscurecer</option>
+                <option value="difference">Diferencia</option>
+                <option value="multiply">Multiplicar</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ****** FILTROS ****** -->
+
+        <div class="panel-control filtros">
+          <p class="panel-title">FILTROS</p>
+          <div class="control-range">
+            <label for="brightness-range">BRILLO</label>
+            <input
+              id="brightness-range"
+              type="range"
+              min="0"
+              max="1"
+              value="1"
+              step="0.1"
+            />
+          </div>
+          <div class="control-range">
+            <label for="opacity-range">OPACIDAD</label>
+            <input
+              id="opacity-range"
+              type="range"
+              min="0"
+              max="1"
+              value="1"
+              step="0.1"
+            />
+          </div>
+          <div class="control-range">
+            <label for="contrast-range">CONTRASTE</label>
+            <input
+              id="contrast-range"
+              type="range"
+              min="100"
+              max="1000"
+              value="100"
+            />
+          </div>
+          <div class="control-range">
+            <label for="blur-range">DESENFOQUE</label>
+            <input
+              id="blur-range"
+              type="range"
+              min="0"
+              max="10"
+              value="0"
+              step="0.1"
+            />
+          </div>
+          <div class="control-range">
+            <label for="greyscale-range">ESCALA DE GRISES</label>
+            <input
+              id="greyscale-range"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0"
+            />
+          </div>
+          <div class="control-range">
+            <label for="sepia-range">SEPIA</label>
+            <input id="sepia-range" type="range" min="0" max="100" value="0" />
+          </div>
+          <div class="control-range">
+            <label for="hue-range">HUE</label>
+            <input id="hue-range" type="range" min="0" max="360" value="0" />
+          </div>
+          <div class="control-range">
+            <label for="saturate-range">SATURADO</label>
+            <input
+              id="saturate-range"
+              type="range"
+              min="100"
+              max="1000"
+              value="100"
+              step="10"
+            />
+          </div>
+          <div class="control-range">
+            <label for="negative-range">NEGATIVO</label>
+            <input
+              id="negative-range"
+              type="range"
+              min="0"
+              max="1"
+              value="0"
+              step="0.1"
+            />
+          </div>
+          <div class="control-button">
+            <button>REESTABLECER FILTROS</button>
+          </div>
+        </div>
+      </section>
+    </aside>
+    <!-- **************************
+        TEXTO PANEL
+        **************************     -->
+    <!-- <section class="texto-panel">
+      <h2 class="titulo-texto">TEXTO</h2>
+    </section> -->
+
+   
+    <script src="./app.js"></script>
+  </body>
+</html>
