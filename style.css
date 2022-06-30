@@ -4,6 +4,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    
 }
 
 input:focus, select:focus{
@@ -14,34 +15,23 @@ input:focus, select:focus{
     color:#ffffff ;
     width: 100%;
     height:100px;
-    padding-bottom: 20px;
-    padding-top: 10px;
+    padding: 5px;
     text-align: center;
     position: fixed;
     z-index:1;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .light-theme .header {
-    background-color: #eeebeb;
+    background-color:#e0e0e0;
     color: #000000;
 }
 
 
-.botones-header{
-    padding-top: 20px;
-    padding-bottom: 30px;
-    
-}
-
-.light-theme .botones-header .boton{
-    background-color:#ffffff;
-    color:#000000;
-}
-
 .botones-header .boton{
     height: 30px;
     padding: 0 10px;
-    margin:2.5px ;
     color: #ffffff;
     background-color: transparent;
     border-radius: 3px;
@@ -50,11 +40,29 @@ input:focus, select:focus{
     align-items: center;
     border: 0;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
 }
-
+.botones-header{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    
+}
 .botones-header :hover{
    background-color: #4e5565;
    color: #ffffff;
+}
+
+.light-theme .botones-header{
+    color: #000000;
+    transition: background-color 0.2s ;
+}
+
+.light-theme .botones-header :hover{
+    background-color: #bdbdbd;
+     
+}
+.light-theme .botones-header .boton{
+    color: #000000;
 }
 
 .contenedor-principal{
@@ -64,6 +72,12 @@ input:focus, select:focus{
     flex: 80%;
     padding-left: 26%;
     padding-top: 105px;
+    font-size: 10px;
+    overflow: hidden;
+    
+}
+.light-theme .contenedor-principal{
+    background-color: #eeeeee;
 }
 
 .boton-text{
@@ -87,31 +101,47 @@ input:focus, select:focus{
 .cerrar-panel{
     position: fixed;
     top: 15px;
-    right: 15px;
+    right: 20px;
     border-radius: 3px;
     cursor: pointer;
     border: 0;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.light-theme .cerrar-panel{
+    color: #000000;
 }
 
 .panel{
     background-color: #252935;
     padding-top: 20px;
     color: #ffffff;
-    font-family:'Open Sans', sans-serif;
     z-index:2;
     position: fixed;
     top: 0;
     right: 0;
     width: 260px;
     padding: 2%;
-
+    font-family: 'Open Sans', sans-serif;
+    overflow-y: scroll;
 }
- 
+.light-theme .panel{
+    color: #191e2b;
+}
+
 .panel .imagen-panel{
     height: 100vh;
- 
 }
 
+.light-theme .panel .imagen-panel{
+    color: #191e2b;
+}
+
+.titulo-panel{
+    display: flex;
+    justify-content: center;
+}
 
 .panel input#insertar-img-url {
     background-color:#30343f;
@@ -120,30 +150,82 @@ input:focus, select:focus{
     height: 36px;
     transition: background-color 0.2s;
     color: #ffffff;
-    font-size: 14px;
-    padding: 0 10px;
+    font-size: 12px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
 }
+
 
 .panel input#insertar-img-url:hover{
     background-color: #5a5d68;
 }
+.light-theme .panel input#insertar-img-url{
+    color: #bdbdbd;
+}
+
+
+.imagen-panel .titulo-panel{
+    padding: 0 0 5px;
+
+}
+
+
+.panel-control.fondo{
+    margin-top: 5px;
+    margin-bottom: 15px;
+   
+}
+.titulo-fondo{
+    padding-bottom: 5px;
+}
 
 .fondo-color{
+    background-color:#30343f;
+    height: 36px;
+    transition: background-color 0.2s;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 1px 2px;
+    margin: 0px 0px 5px;
+    border: 0;
+    border-radius: 2px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.panel-blend-mode{
+    background-color:#30343f;
     border: 0;
     border-radius: 2px;
     height: 36px;
-    width: 20px;
+    transition: background-color 0.2s;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 0px 0px 5px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
-.panel #blendMode{
-    background-color: #5a5d68;
+#blend-mode{
+    color: #ffffff;
+    background-color: #30343f;
 }
+
 .panel.filtros{
     color: #ffffff;   
 }
 
 .imagen-panel {
-    font: 16px 'san-serif';
+    font-family: 'Open Sans', sans-serif;
     color: #ffffff;
+    font-size: 12px;
 }
 .panel-fondos{
     display: flex;
@@ -167,6 +249,15 @@ input:focus, select:focus{
     border: none;
 }
 
+.light-theme .panel{
+    background-color: #fafafa;
+}
+
+.light-theme input#insertar-img-url{
+    color: #e0e0e0;
+}
+
+
 /* FILTROS */
 
 .panel-control.filtros input[type='range']{
@@ -175,6 +266,7 @@ input:focus, select:focus{
 }
 input[type='range']::-webkit-slider-thumb{
     width: 10px;
+    height: 10px;
     -webkit-appearance: none;
     background-color: #ffffff;
     height: 10px;
@@ -182,7 +274,98 @@ input[type='range']::-webkit-slider-thumb{
     color: #5a5d68;
 }
 
+.light-theme input[type='range']::-webkit-slider-thumb{
+    background-color: #000000;
+}
+
 input[type='range']::-webkit-slider-runnable-track{
-    height: 10px;
+    height: 5px;
+    width: 5px;
     -webkit-appearance: none;
+}
+
+.panel-title{
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+}
+
+.control-range{
+    padding: 5px;
+    margin: 10px 2px 2px;
+    display: block;
+    
+}
+
+#brightness-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+#opacity-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+#contrast-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#blur-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#greyscale-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+#sepia-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#hue-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#saturate-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#negative-range{
+    display: block;
+    margin: 10px 2px 2px;
+}
+.control-button button{
+    color: #ffffff;
+    border: 0;
+    border-radius: 2px;
+    background-color:#30343f;
+    height: 36px;
+    transition: background-color 0.2s;
+    font-size: 12px;
+    padding: 0px 10px;
+    margin: 30px 0px 0px;
+    font: 14px 'Open Sans', sans-serif;
+}    
+
+
+
+.control-button button:hover{
+    background-color:#5a5d68 ;
+
+}
+
+.texto-panel{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 260px;
+    padding: 2%;
+    font-family: 'Open Sans', sans-serif;
+   
+    
 }

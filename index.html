@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -38,11 +45,10 @@
       </div>
     </header>
 
-    
-        <!-- ********************************
+    <!-- ********************************
                       MAIN CONTAINER 
              ******************************** -->
-    <div class="meme-editor">           
+    <div class="meme-editor">
       <main class="contenedor-principal">
         <div class="boton-text">TOP TEXT</div>
         <div class="imagen-meme"></div>
@@ -55,18 +61,18 @@
                 ************************************* -->
     <aside class="panel" id="panel-control-imagen">
       <button class="cerrar-panel" aria-label="Cerrar panel">
-      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <section class="imagen-panel">
         <h2 class="titulo-panel">IMAGEN</h2>
         <div class="panel-control">
-          <p>URL</p>
+          <p class="url">URL</p>
           <input type="text" id="insertar-img-url" aria-label="url de imagen" />
         </div>
 
         <!-- ****** FONDO ****** -->
-        <div class="panel-control">
-          <p>FONDO</p>
+        <div class="panel-control fondo">
+          <p class="titulo-fondo">FONDO</p>
           <div class="panel-fondos">
             <div class="fondo-color">
               <input
@@ -181,19 +187,108 @@
             />
           </div>
           <div class="control-button">
-            <button>REESTABLECER FILTROS</button>
+            <button>Reestablecer filtros</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- **************************
+        TEXTO PANEL
+        **************************     -->
+      <section class="texto-panel">
+        <h2 class="titulo-texto">TEXTO</h2>
+        <!-- TEXTO SUPERIOR E INFERIOR -->
+        <div class="panel-control-texto">
+          <h3 class="panel-control-titulo">SUPERIOR</h3>
+          <textarea
+            aria-label="Texto Superior"
+            class="panel-control-input"
+            id="top-text-input"
+          >
+TOP TEXT</textarea
+          >
+          <div class="panel-control-checkbox">
+            <input type="checkbox" id="checkbox-sin-texto" />
+            <label for="checkbox-sin-texto">Sin texto superior</label>
+          </div>
+        </div>
+        <div class="panel-control-texto">
+          <h3 class="panel-control-titulo">INFERIOR</h3>
+          <textarea
+            aria-label="Texto Inferior"
+            class="panel-control-input"
+            id="bottom-text-input"
+          >
+BOTTOM TEXT</textarea
+          >
+          <div class="panel-control-checkbox">
+            <input type="checkbox" id="checkbox-sin-texto-inferior" />
+            <label for="checkbox-sin-texto-inferior">Sin texto inferior</label>
+          </div>
+        </div>
+        <!-- FUENTES -->
+        <div class="panel-control-fuentes">
+          <h3 class="panel-control-titulo">FUENTE</h3>
+
+          <select
+            id="seleccionar-fuente"
+            class="panel-control-input"
+            aria-label="Tipo de fuente"
+          >
+            <option value="Arial">Arial</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="American Typewriter">American Typewriter</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Impact">Impact</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+          </select>
+          <div class="contenedor-fuente">
+            <input type="number" class="panel-control-inpu" id="tamaño-fuente-input" aria-label="Tamaño de fuente" min="12" max="112"  value="50">
+            <button class="btn-alinear-izquierda" id="btn-alinear-izquierda" aria-label="Alinear texto a la izquierda">
+              <i class="fa-solid fa-align-left"></i>
+            </button>
+            <button class="btn-alinear-centro" id="btn-alinear-centro" aria-label="Alinear texto al centro">
+              <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button class="btn-alinear-derecha" id="btn-alinear-derecha" aria-label="Alinear texto a la derecha">
+              <i class="fa-solid fa-align-right"></i>
+            </button>
+          </div>
+
+          <div class="panel-colores-texto">
+            <h3 class="panel-control-titulo">COLOR</h3>
+            <div class="color-texto">
+              <input
+                id="color-text-input"
+                type="color"
+                
+                value="#000000"
+                aria-label="Color de texto"
+              />
+              <span class="color-text">#000000</span>
+            </div>
+            <h3 class="panel-control-titulo">FONDO</h3>
+            <div class="fondo-texto">
+              <input
+                id="fondo-text-input"
+                type="color"
+                
+                value="#FFFFFF"
+                aria-label="Color de fondo del texto"
+              />
+              <span class="background-text">#FFFFFF</span>
+            </div>
+          </div>
+          <div class="panel-control-checkbox">
+            <input type="checkbox" id="checkbox-transparente" />
+            <label for="checkbox-transparente">Fondo Transparente</label>
           </div>
         </div>
       </section>
     </aside>
-    <!-- **************************
-        TEXTO PANEL
-        **************************     -->
-    <!-- <section class="texto-panel">
-      <h2 class="titulo-texto">TEXTO</h2>
-    </section> -->
 
-   
     <script src="./app.js"></script>
   </body>
 </html>
