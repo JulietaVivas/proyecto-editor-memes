@@ -80,7 +80,7 @@ input:focus, select:focus{
     background-color: #eeeeee;
 }
 
-.boton-text{
+.text-meme{
     color:#000000;
     background-color: #ffffff;
     height: 100px;
@@ -125,6 +125,7 @@ input:focus, select:focus{
     padding: 2%;
     font-family: 'Open Sans', sans-serif;
     overflow-y: scroll;
+    height: 100vh;
 }
 .light-theme .panel{
     color: #191e2b;
@@ -138,10 +139,7 @@ input:focus, select:focus{
     color: #191e2b;
 }
 
-.titulo-panel{
-    display: flex;
-    justify-content: center;
-}
+
 
 .panel input#insertar-img-url {
     background-color:#30343f;
@@ -227,6 +225,11 @@ input:focus, select:focus{
     color: #ffffff;
     font-size: 12px;
 }
+
+.hide {
+    display:none;
+}
+
 .panel-fondos{
     display: flex;
     justify-content: space-between;
@@ -365,7 +368,31 @@ input[type='range']::-webkit-slider-runnable-track{
     right: 0;
     width: 260px;
     padding: 2%;
-    font-family: 'Open Sans', sans-serif;
-   
-    
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 12px;
+    background-color:#252935 ;
+    padding-top: 20px;
+    color: #ffffff;
+}
+
+.panel-control{
+    background-color:#30343f;
+    border: 0;
+    border-radius: 2px;
+    height: 36px;
+    transition: background-color 0.2s;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.panel-control-titulo{
+    display: flex;
+    justify-content:left;
+}
+.panel-control-titulo-texto{
+    display: flex;
+    justify-content: center;
 }

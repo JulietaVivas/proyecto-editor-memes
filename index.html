@@ -50,9 +50,9 @@
              ******************************** -->
     <div class="meme-editor">
       <main class="contenedor-principal">
-        <div class="boton-text">TOP TEXT</div>
+        <div class="text-meme">TOP TEXT</div>
         <div class="imagen-meme"></div>
-        <div class="boton-text">BOTTOM TEXT</div>
+        <div class="text-meme">BOTTOM TEXT</div>
       </main>
     </div>
 
@@ -64,7 +64,7 @@
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <section class="imagen-panel">
-        <h2 class="titulo-panel">IMAGEN</h2>
+        <h2 class="panel-control-titulo">IMAGEN</h2>
         <div class="panel-control">
           <p class="url">URL</p>
           <input type="text" id="insertar-img-url" aria-label="url de imagen" />
@@ -196,23 +196,22 @@
         TEXTO PANEL
         **************************     -->
       <section class="texto-panel">
-        <h2 class="titulo-texto">TEXTO</h2>
-        <!-- TEXTO SUPERIOR E INFERIOR -->
-        <div class="panel-control-texto">
+        <h2 class="panel-control-titulo-texto">TEXTO</h2>
+        
+        <div class="panel-control">
           <h3 class="panel-control-titulo">SUPERIOR</h3>
           <textarea
             aria-label="Texto Superior"
             class="panel-control-input"
-            id="top-text-input"
-          >
-TOP TEXT</textarea
-          >
-          <div class="panel-control-checkbox">
+            id="top-text-input">TOP TEXT</textarea>
+          
+          
+          <div class="panel-control">
             <input type="checkbox" id="checkbox-sin-texto" />
             <label for="checkbox-sin-texto">Sin texto superior</label>
           </div>
         </div>
-        <div class="panel-control-texto">
+        <div class="panel-control">
           <h3 class="panel-control-titulo">INFERIOR</h3>
           <textarea
             aria-label="Texto Inferior"
@@ -221,13 +220,13 @@ TOP TEXT</textarea
           >
 BOTTOM TEXT</textarea
           >
-          <div class="panel-control-checkbox">
+          <div class="panel-control">
             <input type="checkbox" id="checkbox-sin-texto-inferior" />
             <label for="checkbox-sin-texto-inferior">Sin texto inferior</label>
           </div>
         </div>
-        <!-- FUENTES -->
-        <div class="panel-control-fuentes">
+        
+        <div class="panel-control">
           <h3 class="panel-control-titulo">FUENTE</h3>
 
           <select
@@ -257,7 +256,7 @@ BOTTOM TEXT</textarea
             </button>
           </div>
 
-          <div class="panel-colores-texto">
+          <div class="panel-control">
             <h3 class="panel-control-titulo">COLOR</h3>
             <div class="color-texto">
               <input
@@ -281,10 +280,45 @@ BOTTOM TEXT</textarea
               <span class="background-text">#FFFFFF</span>
             </div>
           </div>
-          <div class="panel-control-checkbox">
+          <div class="panel-control">
             <input type="checkbox" id="checkbox-transparente" />
-            <label for="checkbox-transparente">Fondo Transparente</label>
+            <label for="checkbox-transparente">Fondo transparente</label>
           </div>
+          <div class="panel-control">
+            <h3 class="panel-control-titulo">CONTORNO</h3>
+            <div class="contenedor-botones-contorno">
+              <button class="botones-contorno" id="ningun-boton">
+                  Ninguno
+              </button>
+              <button class="botones-contorno" id="contorno-claro">
+                Claro
+              </button>
+              <button class="botones-contorno" id="contorno-oscuro">
+                Oscuro
+              </button>
+            </div>
+          </div>
+          <div class="panel-control">
+            <h3 class="panel-control-titulo">ESPACIADO</h3>
+            <input type="number" id="input-espaciado" class="panel-control-input" aria-label="Espaciado" min="10" max="50" value="35">
+
+          </div>
+          <div class="panel-control">
+            <h3 class="panel-control-titulo">INTERLINEADO</h3>
+            <select class="panel-control-input" id="interlineado-input" aria-label="Interlineado">
+              <option value="0.8">0.8</option>
+              <option value="1" selected>1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.2">3.2</option>
+
+
+            </select>
+          </div>
+
         </div>
       </section>
     </aside>
