@@ -60,19 +60,19 @@
                       IMAGEN PANEL 
                 ************************************* -->
     <aside class="panel" id="panel-control-imagen">
-      <button class="cerrar-panel" aria-label="Cerrar panel">
+      <button class="cerrar-panel" id="cerrar-panel" aria-label="Cerrar panel">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <section class="imagen-panel">
         <h2 class="panel-control-titulo">IMAGEN</h2>
         <div class="panel-control">
-          <p class="url">URL</p>
+          <p class="title">URL</p>
           <input type="text" id="insertar-img-url" aria-label="url de imagen" />
         </div>
 
         <!-- ****** FONDO ****** -->
         <div class="panel-control fondo">
-          <p class="titulo-fondo">FONDO</p>
+          <p class="title">FONDO</p>
           <div class="panel-fondos">
             <div class="fondo-color">
               <input
@@ -101,7 +101,7 @@
         <!-- ****** FILTROS ****** -->
 
         <div class="panel-control filtros">
-          <p class="panel-title">FILTROS</p>
+          <p class="title">FILTROS</p>
           <div class="control-range">
             <label for="brightness-range">BRILLO</label>
             <input
@@ -196,42 +196,48 @@
         TEXTO PANEL
         **************************     -->
       <section class="texto-panel">
-        <h2 class="panel-control-titulo-texto">TEXTO</h2>
+        <button class="cerrar-panel" id="cerrar-panel" aria-label="Cerrar panel">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h2 class="panel-control-titulo">TEXTO</h2>
         
         <div class="panel-control">
-          <h3 class="panel-control-titulo">SUPERIOR</h3>
+          <h3 class="title">SUPERIOR</h3>
           <textarea
             aria-label="Texto Superior"
             class="panel-control-input"
-            id="top-text-input">TOP TEXT</textarea>
+            id="top-text-input">TOP TEXT
+          </textarea>
           
           
           <div class="panel-control">
-            <input type="checkbox" id="checkbox-sin-texto" />
+            <input type="checkbox" id="checkbox-sin-texto-superior" />
             <label for="checkbox-sin-texto">Sin texto superior</label>
           </div>
         </div>
         <div class="panel-control">
-          <h3 class="panel-control-titulo">INFERIOR</h3>
+          <h3 class="title">INFERIOR</h3>
+
           <textarea
             aria-label="Texto Inferior"
             class="panel-control-input"
-            id="bottom-text-input"
-          >
-BOTTOM TEXT</textarea
-          >
+            id="bottom-text-input">BOTTOM TEXT
+          </textarea>
+         
+        
           <div class="panel-control">
             <input type="checkbox" id="checkbox-sin-texto-inferior" />
             <label for="checkbox-sin-texto-inferior">Sin texto inferior</label>
           </div>
+
         </div>
         
         <div class="panel-control">
-          <h3 class="panel-control-titulo">FUENTE</h3>
+          <h3 class="title">FUENTE</h3>
 
           <select
             id="seleccionar-fuente"
-            class="panel-control-input"
+            class="select-fuentes"
             aria-label="Tipo de fuente"
           >
             <option value="Arial">Arial</option>
@@ -244,20 +250,23 @@ BOTTOM TEXT</textarea
             <option value="Times New Roman">Times New Roman</option>
           </select>
           <div class="contenedor-fuente">
-            <input type="number" class="panel-control-inpu" id="tamaño-fuente-input" aria-label="Tamaño de fuente" min="12" max="112"  value="50">
-            <button class="btn-alinear-izquierda" id="btn-alinear-izquierda" aria-label="Alinear texto a la izquierda">
+            <input type="number" class="tamaño-fuente-input" id="tamaño-fuente-input" aria-label="Tamaño de fuente" min="12" max="112"  value="50">
+          
+          
+            <button class="botones-alinear-texto" id="btn-alinear-izquierda" aria-label="Alinear texto a la izquierda">
               <i class="fa-solid fa-align-left"></i>
             </button>
-            <button class="btn-alinear-centro" id="btn-alinear-centro" aria-label="Alinear texto al centro">
+            <button class="botones-alinear-texto" id="btn-alinear-centro" aria-label="Alinear texto al centro">
               <i class="fa-solid fa-align-center"></i>
             </button>
-            <button class="btn-alinear-derecha" id="btn-alinear-derecha" aria-label="Alinear texto a la derecha">
+            <button class="botones-alinear-texto" id="btn-alinear-derecha" aria-label="Alinear texto a la derecha">
               <i class="fa-solid fa-align-right"></i>
             </button>
+          
           </div>
 
-          <div class="panel-control">
-            <h3 class="panel-control-titulo">COLOR</h3>
+          <div class="panel-control-color-fondo">
+            <h3 class="title">COLOR</h3>
             <div class="color-texto">
               <input
                 id="color-text-input"
@@ -268,7 +277,7 @@ BOTTOM TEXT</textarea
               />
               <span class="color-text">#000000</span>
             </div>
-            <h3 class="panel-control-titulo">FONDO</h3>
+            <h3 class="title">FONDO</h3>
             <div class="fondo-texto">
               <input
                 id="fondo-text-input"
@@ -280,12 +289,14 @@ BOTTOM TEXT</textarea
               <span class="background-text">#FFFFFF</span>
             </div>
           </div>
+
+          
           <div class="panel-control">
             <input type="checkbox" id="checkbox-transparente" />
             <label for="checkbox-transparente">Fondo transparente</label>
           </div>
           <div class="panel-control">
-            <h3 class="panel-control-titulo">CONTORNO</h3>
+            <h3 class="title">CONTORNO</h3>
             <div class="contenedor-botones-contorno">
               <button class="botones-contorno" id="ningun-boton">
                   Ninguno
@@ -299,12 +310,12 @@ BOTTOM TEXT</textarea
             </div>
           </div>
           <div class="panel-control">
-            <h3 class="panel-control-titulo">ESPACIADO</h3>
+            <h3 class="title">ESPACIADO</h3>
             <input type="number" id="input-espaciado" class="panel-control-input" aria-label="Espaciado" min="10" max="50" value="35">
 
           </div>
           <div class="panel-control">
-            <h3 class="panel-control-titulo">INTERLINEADO</h3>
+            <h3 class="title">INTERLINEADO</h3>
             <select class="panel-control-input" id="interlineado-input" aria-label="Interlineado">
               <option value="0.8">0.8</option>
               <option value="1" selected>1</option>

@@ -10,6 +10,10 @@ let panelDeTexto = document.getElementsByClassName("texto-panel")[0];
 let urlInput = document.getElementById("insertar-img-url");
 let canvaImg = document.getElementsByClassName("imagen-meme")[0];
 
+
+// let btnCloseImg = document.getElementsById("cerrar-panel");
+// let btnCloseTxt = document.getElementsById("cerrar-panel");
+
 //Funciones
 
 const switchDarkTheme = () => {
@@ -34,10 +38,22 @@ const loadImage = (element) => {
   canvaImg.style.backgroundImage = "url('" + element.target.value + "')";
 };
 
+// const closePanelesControl = (element) => {
+//   if (element.target.id === "cerrar-panel"){
+//     btnCloseImg.classList.add("esconder");
+//     btnCloseTxt.classList.remove("esconder");
+//   } else if (element.target.id === "cerrar-panel") {
+//     btnCloseTxt.classList.add("esconder");
+//     btnCloseImg.classList.remove("esconder");
+
+//   }
+// }
+
+
 //Listeners
 
 btnModoOscuro.addEventListener("click", switchDarkTheme);
 botonImagen.addEventListener("click", switchPanelContent);
 botonTexto.addEventListener("click", switchPanelContent);
-//hacer listener para escuchar cambios en el input
 urlInput.addEventListener("change", loadImage);
+// btnClose.addEventListener("click",closePanelesControl);
