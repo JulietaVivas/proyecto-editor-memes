@@ -7,7 +7,7 @@
     
 }
 
-input:focus, select:focus, textarea:focus{
+input:focus, select:focus, textarea:focus, option:focus{
     outline: none;
 }
 /* HEADER */
@@ -71,7 +71,7 @@ input:focus, select:focus, textarea:focus{
     width: 100vw;
     height: 100vh;
     flex: 80%;
-    padding-left: 26%;
+    padding-left: 30%;
     padding-top: 105px;
     font-size: 10px;
     overflow: hidden;
@@ -84,8 +84,8 @@ input:focus, select:focus, textarea:focus{
 .text-meme{
     color:#000000;
     background-color: #ffffff;
-    height: 100px;
-    max-width: 600px;
+    height: 80px;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -94,9 +94,19 @@ input:focus, select:focus, textarea:focus{
 }
 
 .imagen-meme{
-  height: 300px;
+  height: 350px;
   background-color: #000000;
-  max-width: 600px;
+  max-width: 500px;
+}
+
+.download-meme{
+    height: 30px;
+    background-color: #14740b;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    right: 48%;
 }
 
 .cerrar-panel{
@@ -110,9 +120,6 @@ input:focus, select:focus, textarea:focus{
     color: #ffffff;
 }
 
-/* .cerrar-panel{
-    display: none;
-} */
 
 .light-theme .cerrar-panel{
     color: #000000;
@@ -194,6 +201,7 @@ input:focus, select:focus, textarea:focus{
     align-items: center;
     width: 48%;
 }
+
 .light-theme .fondo-color{
     background-color: #bdbdbd;
     color: #30343f;
@@ -477,7 +485,7 @@ input[type='range']::-webkit-slider-runnable-track{
     margin-bottom: 5px;
     border-radius: 2px;
 }   
-.light-theme .color-texto, .fondo-texto{
+.light-theme .color-texto.fondo-texto{
     background-color: #bdbdbd;
     color: #30343f;
 }
@@ -523,7 +531,14 @@ input[type='range']::-webkit-slider-runnable-track{
     border-radius:2px ;
 }
 
-.light-theme #ningun-boton, #contorno-claro, #contorno-oscuro {
+.light-theme #ningun-boton#contorno-claro#contorno-oscuro {
     background-color: #bdbdbd;
     color: #30343f;
+}
+.esconder{
+    visibility: hidden;
+}
+
+.aparecer{
+    visibility: visible;
 }

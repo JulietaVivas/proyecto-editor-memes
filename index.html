@@ -48,13 +48,19 @@
     <!-- ********************************
                       MAIN CONTAINER 
              ******************************** -->
-    <div class="meme-editor">
-      <main class="contenedor-principal">
-        <div class="text-meme">TOP TEXT</div>
-        <div class="imagen-meme"></div>
-        <div class="text-meme">BOTTOM TEXT</div>
-      </main>
-    </div>
+      <div class="meme-editor">
+        <main class="contenedor-principal">
+          <div class="text-meme" id="text-meme1">TOP TEXT</div>
+          <div class="imagen-meme"></div>
+          <div class="text-meme" id="text-meme2">BOTTOM TEXT</div>
+          <button class="download-meme" id="download-meme">Descargar meme</button>
+        </main>
+
+       
+
+      </div>
+
+    
 
     <!-- *************************************
                       IMAGEN PANEL 
@@ -85,6 +91,7 @@
             </div>
             <div class="panel-blend-mode">
               <select
+                name="blend-mode"
                 id="blend-mode"
                 aria-label="Modo de mezcla de fondo de imagen"
               >
@@ -196,7 +203,7 @@
         TEXTO PANEL
         **************************     -->
       <section class="texto-panel">
-        <button class="cerrar-panel" id="cerrar-panel" aria-label="Cerrar panel">
+        <button class="cerrar-panel" id="cerrar-panel2" aria-label="Cerrar panel">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
         <h2 class="panel-control-titulo">TEXTO</h2>
@@ -238,6 +245,7 @@
           <select
             id="seleccionar-fuente"
             class="select-fuentes"
+            name="select-fuentes"
             aria-label="Tipo de fuente"
           >
             <option value="Arial">Arial</option>
@@ -290,7 +298,7 @@
             </div>
           </div>
 
-          
+
           <div class="panel-control">
             <input type="checkbox" id="checkbox-transparente" />
             <label for="checkbox-transparente">Fondo transparente</label>
@@ -333,7 +341,7 @@
         </div>
       </section>
     </aside>
-
+    
     <script src="./app.js"></script>
   </body>
 </html>
