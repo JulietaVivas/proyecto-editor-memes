@@ -80,8 +80,12 @@ input:focus, select:focus, textarea:focus, option:focus{
 .light-theme .contenedor-principal{
     background-color: #eeeeee;
 }
-
-.text-meme{
+.imagen-meme{
+  height: 500px;
+  background-color: #000000;
+  max-width: 500px;
+}
+.top-text{
     color:#000000;
     background-color: #ffffff;
     height: 80px;
@@ -91,13 +95,28 @@ input:focus, select:focus, textarea:focus, option:focus{
     text-align: center;
     align-items: center;
     font-size: 40px;
+    position: relative;
+}
+.bottom-text{
+    color:#000000;
+    background-color: #ffffff;
+    height: 80px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    position:relative ;
+    top: 70%;
+    align-items: center;
+  
+    
 }
 
-.imagen-meme{
-  height: 350px;
-  background-color: #000000;
-  max-width: 500px;
+.checkbox-transparente{
+    margin-top: 8px;
 }
+
 
 .download-meme{
     height: 30px;
@@ -105,8 +124,10 @@ input:focus, select:focus, textarea:focus, option:focus{
     display:flex;
     align-content: center;
     align-items: center;
-    position: fixed;
-    right: 48%;
+    position: relative;
+    top: 70px;
+    left: 180px;
+   
 }
 
 .cerrar-panel{
@@ -444,6 +465,7 @@ input[type='range']::-webkit-slider-runnable-track{
     color: #ffffff;
     font-size: 12px;
     width: 100%;
+    
 }
 .tamaño-fuente-input{
     width: 50%;
@@ -468,6 +490,8 @@ input[type='range']::-webkit-slider-runnable-track{
     border: 0;
     color: #ffffff;
     margin: 1.2px;
+    cursor: pointer;
+    
    
 }
 .light-theme .botones-alinear-texto{
@@ -506,9 +530,7 @@ input[type='range']::-webkit-slider-runnable-track{
 #color-text-input, #fondo-text-input{
     background-color: transparent;
 }
-#checkbox-transparente{
-    margin-top: 8px;
-}
+
 
 .contenedor-botones-contorno{
     display: flex;

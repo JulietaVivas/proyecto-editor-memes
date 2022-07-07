@@ -50,9 +50,12 @@
              ******************************** -->
       <div class="meme-editor">
         <main class="contenedor-principal">
-          <div class="text-meme" id="text-meme1">TOP TEXT</div>
-          <div class="imagen-meme"></div>
-          <div class="text-meme" id="text-meme2">BOTTOM TEXT</div>
+          
+          <div class="imagen-meme">
+            <p class="top-text" id="top-text"> TOP TEXT</p>
+            <p class="bottom-text" id="bottom-text">BOTTOM TEXT</p>
+          </div>
+          
           <button class="download-meme" id="download-meme">Descargar meme</button>
         </main>
 
@@ -246,8 +249,8 @@
             id="seleccionar-fuente"
             class="select-fuentes"
             name="select-fuentes"
-            aria-label="Tipo de fuente"
-          >
+            aria-label="Tipo de fuente">
+          
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
             <option value="American Typewriter">American Typewriter</option>
@@ -257,8 +260,9 @@
             <option value="Verdana">Verdana</option>
             <option value="Times New Roman">Times New Roman</option>
           </select>
+
           <div class="contenedor-fuente">
-            <input type="number" class="tamaño-fuente-input" id="tamaño-fuente-input" aria-label="Tamaño de fuente" min="12" max="112"  value="50">
+            <input type="number" class="tamaño-fuente-input" id="tamaño-fuente-input" aria-label="Tamaño de fuente" min="12" max="70"  value="40">
           
           
             <button class="botones-alinear-texto" id="btn-alinear-izquierda" aria-label="Alinear texto a la izquierda">
@@ -275,7 +279,7 @@
 
           <div class="panel-control-color-fondo">
             <h3 class="title">COLOR</h3>
-            <div class="color-texto">
+            <div class="color-texto" id="color-texto">
               <input
                 id="color-text-input"
                 type="color"
@@ -284,9 +288,10 @@
                 aria-label="Color de texto"
               />
               <span class="color-text">#000000</span>
+
             </div>
             <h3 class="title">FONDO</h3>
-            <div class="fondo-texto">
+            <div class="fondo-texto" id="color-fondo">
               <input
                 id="fondo-text-input"
                 type="color"
@@ -300,9 +305,10 @@
 
 
           <div class="panel-control">
-            <input type="checkbox" id="checkbox-transparente" />
+            <input type="checkbox" id="check-trans" class="checkbox-transparente" />
             <label for="checkbox-transparente">Fondo transparente</label>
           </div>
+
           <div class="panel-control">
             <h3 class="title">CONTORNO</h3>
             <div class="contenedor-botones-contorno">
