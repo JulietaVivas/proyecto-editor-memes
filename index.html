@@ -50,12 +50,13 @@
              ******************************** -->
       <div class="meme-editor">
         <main class="contenedor-principal">
-          
-          <div class="imagen-meme">
+          <div class="contenedor-meme" id="cntenedor-meme">
             <p class="top-text" id="top-text"> TOP TEXT</p>
-            <p class="bottom-text" id="bottom-text">BOTTOM TEXT</p>
+            <div class="imagen-meme" ></div>
+            <p class="bottom-text" id="bottom-text"> <i class="fa-solid fa-down-from-line"> </i>
+              BOTTOM TEXT
+            </p>
           </div>
-          
           <button class="download-meme" id="download-meme">Descargar meme</button>
         </main>
 
@@ -98,11 +99,11 @@
                 id="blend-mode"
                 aria-label="Modo de mezcla de fondo de imagen"
               >
-                <option value="unset">Ninguno</option>
-                <option value="lighten">Aclarar</option>
-                <option value="darken">Oscurecer</option>
-                <option value="difference">Diferencia</option>
-                <option value="multiply">Multiplicar</option>
+                <option value="ninguno">Ninguno</option>
+                <option value="aclarar">Aclarar</option>
+                <option value="oscurecer">Oscurecer</option>
+                <option value="diferencia">Diferencia</option>
+                <option value="multiplicar">Multiplicar</option>
               </select>
             </div>
           </div>
@@ -113,9 +114,9 @@
         <div class="panel-control filtros">
           <p class="title">FILTROS</p>
           <div class="control-range">
-            <label for="brightness-range">BRILLO</label>
+            <label for="brightness">BRILLO</label>
             <input
-              id="brightness-range"
+              id="brightness"
               type="range"
               min="0"
               max="1"
@@ -124,9 +125,9 @@
             />
           </div>
           <div class="control-range">
-            <label for="opacity-range">OPACIDAD</label>
+            <label for="opacity">OPACIDAD</label>
             <input
-              id="opacity-range"
+              id="opacity"
               type="range"
               min="0"
               max="1"
@@ -135,9 +136,9 @@
             />
           </div>
           <div class="control-range">
-            <label for="contrast-range">CONTRASTE</label>
+            <label for="contrast">CONTRASTE</label>
             <input
-              id="contrast-range"
+              id="contrast"
               type="range"
               min="100"
               max="1000"
@@ -145,9 +146,9 @@
             />
           </div>
           <div class="control-range">
-            <label for="blur-range">DESENFOQUE</label>
+            <label for="blur">DESENFOQUE</label>
             <input
-              id="blur-range"
+              id="blur"
               type="range"
               min="0"
               max="10"
@@ -156,28 +157,27 @@
             />
           </div>
           <div class="control-range">
-            <label for="greyscale-range">ESCALA DE GRISES</label>
+            <label for="grayscale">ESCALA DE GRISES</label>
             <input
-              id="greyscale-range"
+              id="grayscale"
               type="range"
               min="0"
               max="100"
               value="0"
-              step="0"
             />
           </div>
           <div class="control-range">
-            <label for="sepia-range">SEPIA</label>
-            <input id="sepia-range" type="range" min="0" max="100" value="0" />
+            <label for="sepia">SEPIA</label>
+            <input id="sepia" type="range" min="0" max="100" value="0" />
           </div>
           <div class="control-range">
-            <label for="hue-range">HUE</label>
-            <input id="hue-range" type="range" min="0" max="360" value="0" />
+            <label for="hue">HUE</label>
+            <input id="hue" type="range" min="0" max="360" value="0" />
           </div>
           <div class="control-range">
-            <label for="saturate-range">SATURADO</label>
+            <label for="saturate">SATURADO</label>
             <input
-              id="saturate-range"
+              id="saturate"
               type="range"
               min="100"
               max="1000"
@@ -186,9 +186,9 @@
             />
           </div>
           <div class="control-range">
-            <label for="negative-range">NEGATIVO</label>
+            <label for="negative">NEGATIVO</label>
             <input
-              id="negative-range"
+              id="negative"
               type="range"
               min="0"
               max="1"
@@ -197,14 +197,14 @@
             />
           </div>
           <div class="control-button">
-            <button>Reestablecer filtros</button>
+            <button id="filters-default-btn">Reestablecer filtros</button>
           </div>
         </div>
       </section>
 
       <!-- **************************
         TEXTO PANEL
-        **************************     -->
+    **************************     -->
       <section class="texto-panel">
         <button class="cerrar-panel" id="cerrar-panel2" aria-label="Cerrar panel">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -312,8 +312,8 @@
           <div class="panel-control">
             <h3 class="title">CONTORNO</h3>
             <div class="contenedor-botones-contorno">
-              <button class="botones-contorno" id="ningun-boton">
-                  Ninguno
+              <button class="botones-contorno" id="ningun-contorno">
+                Ninguno
               </button>
               <button class="botones-contorno" id="contorno-claro">
                 Claro
@@ -323,11 +323,14 @@
               </button>
             </div>
           </div>
+
+
           <div class="panel-control">
             <h3 class="title">ESPACIADO</h3>
             <input type="number" id="input-espaciado" class="panel-control-input" aria-label="Espaciado" min="10" max="50" value="35">
 
           </div>
+
           <div class="panel-control">
             <h3 class="title">INTERLINEADO</h3>
             <select class="panel-control-input" id="interlineado-input" aria-label="Interlineado">

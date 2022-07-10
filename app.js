@@ -35,6 +35,15 @@ const alignRight = document.getElementById("btn-alinear-derecha");
 let colorTextoInput = document.getElementById("color-text-input");
 let colorFondoInput = document.getElementById("fondo-text-input");
 
+const ningunContorno = document.getElementById("ningun-contorno");
+const contornoClaro = document.getElementById("contorno-claro");
+const contornoOscuro = document.getElementById("contorno-oscuro");
+
+const interlineadoInput = document.getElementById("interlineado-input");
+
+const blendModeSelector = document.getElementById("blend-mode");
+
+const filtersDefaultBtn = document.getElementById("filters-default-btn");
 
 //Funciones
 
@@ -75,8 +84,104 @@ const closePanelesControl = () => {
     btnCerrarPaneles.classList.add("esconder")
     btnCerrarPaneles.classList.remove("aparecer")
   }
-
 }
+
+
+
+//FILTROS
+
+const brillo = document.getElementById("brightness");
+const opacidad = document.getElementById("opacity");
+const contraste = document.getElementById("contrast");
+const desenfoque = document.getElementById("blur");
+const escalaDeGrises = document.getElementById("grayscale");
+const sepia = document.getElementById("sepia");
+const hue = document.getElementById("hue");
+const saturado = document.getElementById("saturate");
+const negativo = document.getElementById("negative");
+const panelFiltros = document.getElementById("panel-control-filtros");
+
+let filterValues = [];
+
+const filter = (element) => {
+  const brigtnessValue = brillo.value;
+  const opacityValue = opacity.value;
+  const contrastValue = contrast.value;
+  const blueValue = desenfoque.value;
+  const grayscaleValue = escalaDeGrises.value;
+  const sepiaValue = sepia.value;
+  const hueValue = hue.value;
+  const saturadoValue = saturado.value;
+  const negativeValue = negativo.value;
+
+  let filterValues =
+    "opacity(" +
+    opacity.value +
+    ") " +
+    "contrast(" +
+    contrast.value +
+    "%) " +
+    "blur(" +
+    desenfoque.value +
+    "px) " +
+    "brightness(" +
+    brillo.value +
+    ") " +
+    "grayscale(" +
+    escalaDeGrises.value +
+    "%) " +
+    "sepia(" +
+    sepia.value +
+    "%) " +
+    "hue-rotate(" +
+    hue.value +
+    "deg) " +
+    "saturate(" +
+    saturado.value +
+    "%) " +
+    "invert(" +
+    negativo.value +
+    ")";
+  canvaImg.style.filter = filterValues;
+};
+
+
+// Reestablecer Filtros
+
+const reestablecerFiltros = () => {
+  let filterValues =
+    "opacity(1) contrast(100%) blur(0px) brightness(1) grayscale(0%) sepia(0%) hue-rotate(0deg) saturate(100%) invert(0)";
+
+  canvaImg.style.filter = filterValues;
+
+  brillo.value = 1;
+  opacidad.value = 1;
+  contraste.value = 100;
+  desenfoque.value = 0;
+  escalaDeGrises.value = 0;
+  sepia.value = 0;
+  hue.value = 0;
+  saturado.value = 100;
+  negativo.value = 0;
+};
+
+
+
+brillo.addEventListener("input", filter);
+opacidad.addEventListener("input", filter);
+contraste.addEventListener("input", filter);
+desenfoque.addEventListener("input", filter);
+escalaDeGrises.addEventListener("input", filter);
+sepia.addEventListener("input", filter);
+hue.addEventListener("input", filter);
+saturado.addEventListener("input", filter);
+negativo.addEventListener("input", filter);
+//dento de la funcion filter, deben meter los filtros que faltan con los valores correspondientes
+
+filtersDefaultBtn.addEventListener("click",reestablecerFiltros);
+
+
+
 
 //Cambiar texto de arriba y abajo 
 
@@ -101,8 +206,9 @@ noBottomText.addEventListener( 'click', (event) =>{
   modifyMemeText2.classList.toggle("esconder");
 });
 
-//Cambiar fuentes
 
+
+//Cambiar fuentes
 
 seleccionarFuente.addEventListener("change", ()=> {
   modifyMemeText1.style.fontFamily = seleccionarFuente.value;
@@ -111,8 +217,8 @@ seleccionarFuente.addEventListener("change", ()=> {
   
 });
 
-// Tamaño de fuente
 
+// Tamaño de fuente
 
 tamanoDeFuente.addEventListener("input", () => {
   modifyMemeText1.style.fontSize = `${tamanoDeFuente.value}px`;
@@ -120,18 +226,26 @@ tamanoDeFuente.addEventListener("input", () => {
   console.log(tamanoDeFuente.value)
 });
 
+
+
 //Alinear Fuentes - no sale
 
 alignLeft.addEventListener("click", () => {
-  modifyMemeText1.style.textAlign = "left";
-  modifyMemeText2.style.textAlign = "left";
+  modifyMemeText1.style.justifyContent = "flex-start"
+  modifyMemeText2.style.justifyContent = "flex-start"
+  console.log(alignLeft)
 });
 
-
-
 alignRight.addEventListener("click", () => {
-  modifyMemeText1.style.textAlign = "right";
-  modifyMemeText2.style.textAlign = "right";
+  modifyMemeText1.style.justifyContent = "flex-end"
+  modifyMemeText2.style.justifyContent = "flex-end"
+  console.log(alignRight)
+});
+
+alignCenter.addEventListener("click", () => {
+  modifyMemeText1.style.justifyContent = "center";
+  modifyMemeText2.style.justifyContent = "center";
+  console.log(alignCenter)
 });
 
 
@@ -141,32 +255,100 @@ alignRight.addEventListener("click", () => {
 colorTextoInput.addEventListener("input", (event) => {
   modifyMemeText1.style.color = event.target.value;
   modifyMemeText2.style.color = event.target.value;
-  console.log(colorTextoInput)
+ 
 });
+
 colorFondoInput.addEventListener("input", (event) => {
   modifyMemeText1.style.backgroundColor = event.target.value;
   modifyMemeText2.style.backgroundColor = event.target.value;
-  console.log(colorFondoInput);
+  
 });
 
-//Fondo transparente- no me sale
+// fondo del meme 
+const fondoMeme =  document.getElementById("color");
+
+fondoMeme.addEventListener("input", (event) =>{
+  canvaImg.style.backgroundColor= event.target.value;
+  
+});
+
+//Fondo transparente
 
 const fondoTransparente = document.getElementById("check-trans");
 
 fondoTransparente.addEventListener("click", () => {
-  if (fondoTransparente.checked){
-    modifyMemeText1.classList.toggle("ocultar");
-    modifyMemeText1.classList.add("ocultar");
-    modifyMemeText2.classList.toggle("ocultar");
-    modifyMemeText2.classList.add("ocultar");
-    } else {
-      modifyMemeText1.classList.toggle("ocultar");
-      modifyMemeText2.classList.toggle("ocultar");
-      modifyMemeText1.classList.remove("ocultar");
-      modifyMemeText2.classList.remove("ocultar");
-    }
-    console.log(fondoTransparente);
-})
+  console.log(fondoTransparente);
+  if (body.classList.contains("meme")) {
+    body.classList.remove("meme");
+  } else {
+    body.classList.add("meme");
+  }
+
+});
+
+//Contorno
+
+
+
+const agregarContorno = (element) => {
+  if (element.target.id === "contorno-claro") {
+    modifyMemeText1.classList.add("claro-contorno")
+    modifyMemeText2.classList.add("claro-contorno")
+    modifyMemeText1.classList.remove("oscuro-contorno")
+    modifyMemeText2.classList.remove("oscuro-contorno")
+   
+  } else if (element.target.id === "contorno-oscuro") { 
+    modifyMemeText1.classList.add("oscuro-contorno")
+    modifyMemeText2.classList.add("oscuro-contorno")
+    modifyMemeText1.classList.remove("claro-contorno")
+    modifyMemeText2.classList.remove("claro-contorno")
+    
+  } else {
+    modifyMemeText1.classList.remove("claro-contorno")
+    modifyMemeText2.classList.remove("claro-contorno")
+    modifyMemeText1.classList.remove("oscuro-contorno")
+    modifyMemeText2.classList.remove("oscuro-contorno")
+  }
+};
+
+//Espaciado
+
+const espaciado = document.getElementById("input-espaciado");
+
+espaciado.addEventListener("input", () => {
+  modifyMemeText1.style.padding = `${espaciado.value}px`;
+  modifyMemeText2.style.padding = `${espaciado.value}px`;
+});
+
+
+// Interlineado
+
+const interlineadoChange = (element)  => {
+  const value = element.target.value;
+  modifyMemeText1.style.lineHeight = value;
+  modifyMemeText2.style.lineHeight = value;
+}
+
+// Image Blend
+
+const blendModeChange = (element) => {
+  console.log("blend",element)
+  const value = element.target.value;
+
+  if(value === "aclarar") {
+    canvaImg.style.backgroundBlendMode =  "luminosity";
+  } else if (value === "oscurecer") {
+    canvaImg.style.backgroundBlendMode = "darken";
+  } else if(value === "multiplicar") {
+    canvaImg.style.backgroundBlendMode = "multiply";
+  } else if(value === "diferencia") {
+    canvaImg.style.backgroundBlendMode = "difference;"
+  } else if (value === "ninguno") {
+    canvaImg.style.backgroundBlendMode = "initial";
+  }
+  
+}
+
 
 //Listeners
 
@@ -179,4 +361,7 @@ urlInput.addEventListener("change", loadImage);
 botonCerrar.addEventListener("click",closePanelesControl);
 botonCerrar2.addEventListener("click",closePanelesControl);
 
+interlineadoInput.addEventListener("change",interlineadoChange);
+blendModeSelector.addEventListener("change",blendModeChange);
 
+addEventListener("click", agregarContorno);

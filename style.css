@@ -72,7 +72,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     height: 100vh;
     flex: 80%;
     padding-left: 30%;
-    padding-top: 105px;
+    padding-top: 160px;
     font-size: 10px;
     overflow: hidden;
     
@@ -80,37 +80,63 @@ input:focus, select:focus, textarea:focus, option:focus{
 .light-theme .contenedor-principal{
     background-color: #eeeeee;
 }
-.imagen-meme{
-  height: 500px;
-  background-color: #000000;
-  max-width: 500px;
+
+.contenedor-meme{
+    width: 40vw;
+    height: 30vw;
+    overflow: hidden;
+    position: relative;
 }
+
+
+.imagen-meme{
+    background-color: #000000;
+    background-image: unset;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 20vw;
+}
+
+.meme .top-text{
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+}
+
+.meme .bottom-text{
+    position: absolute;
+    background-color: transparent;
+    bottom:0;
+    width: 100%;
+}
+
+.meme .imagen-meme{
+    height: 100%;
+}
+
 .top-text{
     color:#000000;
     background-color: #ffffff;
-    height: 80px;
-    max-width: 500px;
+    height: 5vw;
     display: flex;
-    justify-content: center;
     text-align: center;
     align-items: center;
+    justify-content: center;
     font-size: 40px;
     position: relative;
 }
+
 .bottom-text{
     color:#000000;
     background-color: #ffffff;
-    height: 80px;
-    max-width: 500px;
+    height: 5vw;
     display: flex;
     justify-content: center;
     text-align: center;
     font-size: 40px;
     position:relative ;
-    top: 70%;
-    align-items: center;
-  
-    
+    align-items:center;
 }
 
 .checkbox-transparente{
@@ -119,14 +145,15 @@ input:focus, select:focus, textarea:focus, option:focus{
 
 
 .download-meme{
-    height: 30px;
-    background-color: #14740b;
+    height: 50px;
+    width: 111px;
+    background-color: #25e913;
     display:flex;
     align-content: center;
     align-items: center;
     position: relative;
-    top: 70px;
-    left: 180px;
+    top: 12px;
+    left: 156px;
    
 }
 
@@ -163,7 +190,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     overflow-y: scroll;
     height: 100vh;
     font-size: 12px;
-   
+ 
 }
 
 .light-theme .panel{
@@ -335,44 +362,44 @@ input[type='range']::-webkit-slider-runnable-track{
     
 }
 
-#brightness-range{
+#brightness{
     display: block;
     margin: 10px 2px 2px;
 }
-#opacity-range{
+#opacidad{
     display: block;
     margin: 10px 2px 2px;
 }
-#contrast-range{
-    display: block;
-    margin: 10px 2px 2px;
-}
-
-#blur-range{
+#contrast{
     display: block;
     margin: 10px 2px 2px;
 }
 
-#greyscale-range{
-    display: block;
-    margin: 10px 2px 2px;
-}
-#sepia-range{
+#blur{
     display: block;
     margin: 10px 2px 2px;
 }
 
-#hue-range{
+#greyscale{
+    display: block;
+    margin: 10px 2px 2px;
+}
+#sepia{
     display: block;
     margin: 10px 2px 2px;
 }
 
-#saturate-range{
+#hue{
     display: block;
     margin: 10px 2px 2px;
 }
 
-#negative-range{
+#saturate{
+    display: block;
+    margin: 10px 2px 2px;
+}
+
+#negative{
     display: block;
     margin: 10px 2px 2px;
 }
@@ -543,7 +570,7 @@ input[type='range']::-webkit-slider-runnable-track{
 }
 
 
-#ningun-boton, #contorno-claro, #contorno-oscuro {
+#ningun-contorno, #contorno-claro, #contorno-oscuro {
     background-color: #30343f;
     border: 0;
     color: #ffffff;
@@ -553,14 +580,39 @@ input[type='range']::-webkit-slider-runnable-track{
     border-radius:2px ;
 }
 
-.light-theme #ningun-boton#contorno-claro#contorno-oscuro {
+.light-theme #ningun-contorno#contorno-claro#contorno-oscuro {
     background-color: #bdbdbd;
     color: #30343f;
 }
+
+.claro-contorno{
+  text-shadow: 2px 2px whitesmoke;
+}
+
+.oscuro-contorno{
+    text-shadow: 2px 2px black;
+}
+
 .esconder{
     visibility: hidden;
 }
 
 .aparecer{
     visibility: visible;
+}
+
+@media (min-width: 1300px ) {
+    .panel {
+        display: block;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .panel{
+        width: 100%;
+    }
+    .texto-panel {
+        width: 100%;
+    }
 }
