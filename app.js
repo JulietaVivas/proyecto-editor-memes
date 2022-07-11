@@ -147,7 +147,6 @@ const filter = (element) => {
   canvaImg.style.filter = filterValues;
 };
 
-
 // Reestablecer Filtros
 
 const reestablecerFiltros = () => {
@@ -168,7 +167,6 @@ const reestablecerFiltros = () => {
 };
 
 
-
 brillo.addEventListener("input", filter);
 opacidad.addEventListener("input", filter);
 contraste.addEventListener("input", filter);
@@ -183,7 +181,6 @@ filtersDefaultBtn.addEventListener("click",reestablecerFiltros);
 
 
 //Cambiar texto de arriba y abajo 
-
 
 modifyTopText.addEventListener('input', (event) => {
   const valorActual = event.target.value
@@ -262,6 +259,7 @@ colorFondoInput.addEventListener("input", (event) => {
   modifyMemeText2.style.backgroundColor = event.target.value;
   
 });
+
 
 // fondo del meme 
 const fondoMeme =  document.getElementById("color");
@@ -353,10 +351,23 @@ const blendModeChange = (element) => {
 
 const btnDescarga = document.getElementById("download-meme-button");
 
-btnDescarga.addEventListener("click", () =>
-  domtoimage.toBlob(document.getElementById('contenedor-meme')).then((blob) => 
-    saveAs(blob, 'mi-meme.png')));
+// btnDescarga.addEventListener("click", () =>
+//   domtoimage.toBlob(document.getElementById("contenedor-meme")).then((blob) => {
+//      saveAs(blob, 'mi-meme.png'))
+     
+//    })
+   
 
+btnDescarga.addEventListener("click", () =>
+  domtoimage.toBlob(document.getElementById("contenedor-meme"))
+  .then((blob) => {
+    console.log(blob)
+    saveAs(blob, 'mi-meme.png')
+  }))
+
+// domtoimage.toBlob(document.getElementById("contenedor-meme")).then((blob) => {
+//   saveAs(blob, 'mi-meme.png')
+// })   
 
 //Listeners
 
@@ -372,4 +383,6 @@ botonCerrar2.addEventListener("click",closePanelesControl);
 interlineadoInput.addEventListener("change",interlineadoChange);
 blendModeSelector.addEventListener("change",blendModeChange);
 
-addEventListener("click", agregarContorno);
+ningunContorno.addEventListener("click", agregarContorno);
+contornoClaro.addEventListener("click", agregarContorno);
+contornoOscuro.addEventListener("click", agregarContorno);

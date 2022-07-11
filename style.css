@@ -15,6 +15,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     background-color: #30343f;
 
 }
+
 /* HEADER */
 .header{
     background-color:#191e2b ;
@@ -78,8 +79,11 @@ input:focus, select:focus, textarea:focus, option:focus{
     justify-content: center;
     align-items: center;
     background-color: #30343f;
-    padding: 120px;
+    padding-bottom: 43px;
+    padding-top: 125px;
+    
 }
+
 .light-theme .contenedor-principal{
     background-color: #eeeeee;
 }
@@ -92,6 +96,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     position: relative;
     display: flex;
     flex-direction: column;
+   
 }
 
 
