@@ -19,6 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+   
     <title>Generador de meme</title>
   </head>
 
@@ -48,21 +49,18 @@
     <!-- ********************************
                       MAIN CONTAINER 
              ******************************** -->
-      <div class="meme-editor">
+      
         <main class="contenedor-principal">
-          <div class="contenedor-meme" id="cntenedor-meme">
-            <p class="top-text" id="top-text"> TOP TEXT</p>
-            <div class="imagen-meme" ></div>
-            <p class="bottom-text" id="bottom-text"> <i class="fa-solid fa-down-from-line"> </i>
+          <div class="contenedor-meme" id="contenedor-meme" style="height:614.984px; ">
+            <p class="top-text" id="top-text" position: static; padding: 15px 50p> TOP TEXT</p>
+            <div class="imagen-meme"></div>
+            <p class="bottom-text" id="bottom-text" position: static; padding: 15px 50p></i>
               BOTTOM TEXT
             </p>
           </div>
-          <button class="download-meme" id="download-meme">Descargar meme</button>
+          <button class="download-meme" id="download-meme-button">Descargar meme</button>
         </main>
 
-       
-
-      </div>
 
     
 
@@ -350,7 +348,8 @@
         </div>
       </section>
     </aside>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <script src="./app.js"></script>
   </body>
 </html>

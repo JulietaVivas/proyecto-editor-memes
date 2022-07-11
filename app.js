@@ -45,6 +45,8 @@ const blendModeSelector = document.getElementById("blend-mode");
 
 const filtersDefaultBtn = document.getElementById("filters-default-btn");
 
+
+
 //Funciones
 
 //Modo oscuro/claro
@@ -176,11 +178,8 @@ sepia.addEventListener("input", filter);
 hue.addEventListener("input", filter);
 saturado.addEventListener("input", filter);
 negativo.addEventListener("input", filter);
-//dento de la funcion filter, deben meter los filtros que faltan con los valores correspondientes
 
 filtersDefaultBtn.addEventListener("click",reestablecerFiltros);
-
-
 
 
 //Cambiar texto de arriba y abajo 
@@ -348,6 +347,15 @@ const blendModeChange = (element) => {
   }
   
 }
+
+
+//Botòn de descarga
+
+const btnDescarga = document.getElementById("download-meme-button");
+
+btnDescarga.addEventListener("click", () =>
+  domtoimage.toBlob(document.getElementById('contenedor-meme')).then((blob) => 
+    saveAs(blob, 'mi-meme.png')));
 
 
 //Listeners

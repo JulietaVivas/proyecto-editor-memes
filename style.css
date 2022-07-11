@@ -10,8 +10,12 @@
 input:focus, select:focus, textarea:focus, option:focus{
     outline: none;
 }
-/* HEADER */
 
+.body{
+    background-color: #30343f;
+
+}
+/* HEADER */
 .header{
     background-color:#191e2b ;
     color:#ffffff ;
@@ -66,26 +70,28 @@ input:focus, select:focus, textarea:focus, option:focus{
 
 /* CONTENEDOR MEME */
 
+
 .contenedor-principal{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #30343f;
-    width: 100vw;
-    height: 100vh;
-    flex: 80%;
-    padding-left: 30%;
-    padding-top: 160px;
-    font-size: 10px;
-    overflow: hidden;
-    
+    padding: 120px;
 }
 .light-theme .contenedor-principal{
     background-color: #eeeeee;
 }
 
 .contenedor-meme{
-    width: 40vw;
-    height: 30vw;
-    overflow: hidden;
+    width: 100%;
+    max-width: 610px;
+    height: 610px;
+    background-color: black;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -94,8 +100,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     background-image: unset;
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 20vw;
+    flex-grow: 1;
 }
 
 .meme .top-text{
@@ -121,10 +126,11 @@ input:focus, select:focus, textarea:focus, option:focus{
     height: 5vw;
     display: flex;
     text-align: center;
-    align-items: center;
     justify-content: center;
     font-size: 40px;
-    position: relative;
+    position: static;
+    font-weight: 800;
+    align-items: center;
 }
 
 .bottom-text{
@@ -135,8 +141,10 @@ input:focus, select:focus, textarea:focus, option:focus{
     justify-content: center;
     text-align: center;
     font-size: 40px;
-    position:relative ;
+    position:static ;
     align-items:center;
+    bottom: 0;
+    font-weight: 800;
 }
 
 .checkbox-transparente{
@@ -145,16 +153,12 @@ input:focus, select:focus, textarea:focus, option:focus{
 
 
 .download-meme{
-    height: 50px;
-    width: 111px;
-    background-color: #25e913;
-    display:flex;
-    align-content: center;
-    align-items: center;
-    position: relative;
-    top: 12px;
-    left: 156px;
-   
+    background-color: #2e7d32;
+    padding: 15px 15px;
+    margin-top: 30px;
+    height: auto;
+    color: white;
+    cursor: pointer;
 }
 
 .cerrar-panel{
@@ -260,17 +264,14 @@ input:focus, select:focus, textarea:focus, option:focus{
     border: 0;
     border-radius: 2px;
     height: 36px;
-    width: 48%;
+    width: 49%;
     transition: background-color 0.2s;
     color: #ffffff;
     font-size: 12px;
     padding: 5px 10px;
     margin: 0px 0px 5px;
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
+   
 }
 .light-theme .panel-blend-mode{
     background-color: #bdbdbd;
@@ -280,7 +281,11 @@ input:focus, select:focus, textarea:focus, option:focus{
 #blend-mode{
     color: #ffffff;
     background-color: #30343f;
-
+    border: 0;
+}
+.light-theme #blend-mode{
+    background-color: #bdbdbd;
+    color: #30343f;
 }
 
 .panel.filtros{
@@ -334,6 +339,7 @@ input:focus, select:focus, textarea:focus, option:focus{
     -webkit-appearance: none;
     background-color: #5a5d68;
     width: 100%;
+    cursor: pointer;
 }
 input[type='range']::-webkit-slider-thumb{
     width: 10px;
@@ -535,11 +541,18 @@ input[type='range']::-webkit-slider-runnable-track{
     font-size: 12px;
     margin-bottom: 5px;
     border-radius: 2px;
+    cursor: pointer;
 }   
-.light-theme .color-texto.fondo-texto{
+.light-theme .color-texto{
     background-color: #bdbdbd;
     color: #30343f;
 }
+
+.light-theme .fondo-texto{
+    background-color: #bdbdbd;
+    color: #30343f;
+}
+
 .color-text, .background-text{
     padding-top: 5px;
     padding-left: 2px;
@@ -551,6 +564,7 @@ input[type='range']::-webkit-slider-runnable-track{
     border: none;
     -webkit-appearance: none;
     overflow: hidden;
+    cursor: pointer;
 }
 
 
@@ -567,6 +581,7 @@ input[type='range']::-webkit-slider-runnable-track{
     padding: 0 10px;
     background-color: transparent;
     transition: background-color 0.2s;
+    
 }
 
 
@@ -578,9 +593,20 @@ input[type='range']::-webkit-slider-runnable-track{
     margin-right: 8px;
     height: 36px;
     border-radius:2px ;
+    cursor: pointer;
 }
 
-.light-theme #ningun-contorno#contorno-claro#contorno-oscuro {
+.light-theme #ningun-contorno{
+    background-color: #bdbdbd;
+    color: #30343f;
+}
+
+.light-theme #contorno-claro{
+    background-color: #bdbdbd;
+    color: #30343f;
+}
+
+.light-theme #contorno-oscuro{
     background-color: #bdbdbd;
     color: #30343f;
 }
