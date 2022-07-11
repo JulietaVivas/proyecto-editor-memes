@@ -351,11 +351,6 @@ const blendModeChange = (element) => {
 
 const btnDescarga = document.getElementById("download-meme-button");
 
-// btnDescarga.addEventListener("click", () =>
-//   domtoimage.toBlob(document.getElementById("contenedor-meme")).then((blob) => {
-//      saveAs(blob, 'mi-meme.png'))
-     
-//    })
    
 
 btnDescarga.addEventListener("click", () =>
@@ -365,9 +360,7 @@ btnDescarga.addEventListener("click", () =>
     saveAs(blob, 'mi-meme.png')
   }))
 
-// domtoimage.toBlob(document.getElementById("contenedor-meme")).then((blob) => {
-//   saveAs(blob, 'mi-meme.png')
-// })   
+
 
 //Listeners
 

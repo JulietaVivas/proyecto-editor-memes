@@ -11,10 +11,6 @@ input:focus, select:focus, textarea:focus, option:focus{
     outline: none;
 }
 
-.body{
-    background-color: #30343f;
-
-}
 
 /* HEADER */
 .header{
@@ -73,7 +69,7 @@ input:focus, select:focus, textarea:focus, option:focus{
 
 
 .contenedor-principal{
-    flex-grow: 1;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +85,7 @@ input:focus, select:focus, textarea:focus, option:focus{
 }
 
 .contenedor-meme{
-    width: 100%;
+    width: 100vw;
     max-width: 610px;
     height: 610px;
     background-color: black;
