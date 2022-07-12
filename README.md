@@ -11,4 +11,12 @@ cambiar letra, tamaño, color, alineacion, filtros, fondos, descargar el meme te
 
 <h5> Maquetado con HTML y Css</h5>   
 <h5>Funcionalidad con JavaScript</h5>
+<h5>Pensamiento Lògico con Pseudocòdigo</h5>
 
+
+![pseudoCodigo](https://user-images.githubusercontent.com/47679213/178390419-9fd6019b-96ff-474f-ba20-a6c977bc39ad.jpg)
+
+<h5> Se puede visitar la web acà: </h5>
+
+
+![mi-meme (13)](https://user-images.githubusercontent.com/47679213/178391283-b20e9c52-df3b-4c3c-baba-440442db584c.png)
