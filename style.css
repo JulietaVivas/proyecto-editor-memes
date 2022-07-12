@@ -75,9 +75,9 @@ input:focus, select:focus, textarea:focus, option:focus{
     justify-content: center;
     align-items: center;
     background-color: #30343f;
-    padding-bottom: 43px;
+    /* padding-bottom: 43px;
     padding-top: 125px;
-    
+     */
 }
 
 .light-theme .contenedor-principal{
@@ -87,7 +87,7 @@ input:focus, select:focus, textarea:focus, option:focus{
 .contenedor-meme{
     width: 100vw;
     max-width: 610px;
-    height: 610px;
+    height: 540px;
     background-color: black;
     position: relative;
     display: flex;
@@ -641,5 +641,27 @@ input[type='range']::-webkit-slider-runnable-track{
     }
     .texto-panel {
         width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .panel{
+        display: none;
+    }
+    .texto-panel{
+        display: none;
+    }
+}
+
+@media (max-width: 630px) {
+    .contenedor-meme{
+        height: 350px;
+        width: 75vw;
+    }
+}
+@media (max-width: 450px) {
+    .contenedor-meme{
+        height: 300px;
+        width: 65vw;
     }
 }

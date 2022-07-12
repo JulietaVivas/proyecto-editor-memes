@@ -351,8 +351,6 @@ const blendModeChange = (element) => {
 
 const btnDescarga = document.getElementById("download-meme-button");
 
-   
-
 btnDescarga.addEventListener("click", () =>
   domtoimage.toBlob(document.getElementById("contenedor-meme"))
   .then((blob) => {
